@@ -1,0 +1,220 @@
+/* espacoProfissional.css */
+
+/* Variáveis de Cor (consistentes com o restante do projeto) */
+:root {
+    --cor-primaria: #E74C3C; /* Vermelho */
+    --cor-secundaria: #FFFFFF; /* Branco */
+    --cor-fundo: #f0f2f5; /* Um cinza um pouco diferente para o fundo do portal */
+    --cor-texto: #333333; /* Cinza escuro */
+    --cor-texto-claro: #FFFFFF;
+    --cor-borda: #d9d9d9;
+    --cor-azul-info: #3498DB; /* Azul para alguns destaques */
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Reset Básico e Configurações Globais */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px; /* Um pouco maior para dashboard */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Cabeçalho Específico do Portal */
+  .cabecalho-profissional {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px var(--cor-sombra);
+  }
+  
+  .cabecalho-profissional .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cabecalho-profissional h1 a {
+      color: var(--cor-texto-claro);
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+  }
+  
+  .cabecalho-profissional .titulo-area {
+      font-size: 1.2rem;
+      font-weight: normal;
+  }
+  
+  /* Botão Logout (Exemplo) */
+  .botao-logout {
+      background-color: var(--cor-secundaria);
+      color: var(--cor-primaria);
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+  }
+  .botao-logout:hover {
+      background-color: #f1f1f1;
+  }
+  
+  /* Conteúdo Principal */
+  .conteudo-principal {
+    padding: 2rem 1rem;
+    flex-grow: 1; /* Ocupa o espaço restante */
+  }
+  
+  .conteudo-principal h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+  }
+  
+  .introducao {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Grid de Módulos (Dashboard) */
+  .dashboard-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Layout responsivo */
+    gap: 1.5rem; /* Espaçamento entre os cards */
+  }
+  
+  .modulo.card {
+    background-color: var(--cor-secundaria);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px var(--cor-sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Organiza conteúdo interno verticalmente */
+  }
+  
+  .modulo.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .modulo h3 {
+    color: var(--cor-azul-info); /* Azul para títulos dos módulos */
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+  }
+  
+  .modulo p {
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Faz o parágrafo ocupar espaço, empurrando o botão para baixo */
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  .aviso-privacidade {
+      font-size: 0.8rem !important; /* !important para garantir sobreposição */
+      color: #777;
+      font-style: italic;
+      margin-top: -0.5rem; /* Aproxima do parágrafo anterior */
+      margin-bottom: 1rem;
+  }
+  
+  
+  /* Placeholder para Ícones */
+  .icone-placeholder {
+      font-size: 2.5rem; /* Tamanho do emoji/ícone */
+      display: block;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--cor-primaria); /* Cor do ícone */
+  }
+  /* Se usar Font Awesome, estilizar a tag <i> em vez de .icone-placeholder */
+  /*
+  .modulo i {
+      font-size: 2.5rem;
+      color: var(--cor-primaria);
+      margin-bottom: 1rem;
+      display: block;
+      text-align: center;
+  }
+  */
+  
+  /* Botão dentro dos Módulos */
+  .botao.botao-modulo {
+    display: inline-block; /* Ou block se quiser largura total */
+    padding: 10px 20px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Empurra o botão para o final do card */
+  }
+  
+  .botao.botao-modulo:hover {
+    background-color: #c0392b; /* Vermelho mais escuro */
+  }
+  
+  
+  /* Rodapé Específico do Portal */
+  .rodape-profissional {
+    background-color: #e9ecef; /* Cinza claro diferente */
+    color: #555;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Empurra para o final */
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.9rem;
+  }
+  
+  /* Media Queries para Responsividade */
+  @media (max-width: 768px) {
+      .cabecalho-profissional .container {
+          flex-direction: column;
+          text-align: center;
+      }
+      .cabecalho-profissional .titulo-area {
+          margin-top: 0.5rem;
+      }
+      .dashboard-modulos {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .dashboard-modulos {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+      }
+       .conteudo-principal h2 {
+          font-size: 1.5rem;
+      }
+      .introducao {
+          font-size: 1rem;
+      }
+      .modulo h3 {
+          font-size: 1.2rem;
+      }
+  }

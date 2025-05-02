@@ -1,0 +1,334 @@
+/* login_cadastro.css */
+
+:root {
+    --cor-primaria: #E74C3C; /* Vermelho */
+    --cor-secundaria: #FFFFFF; /* Branco */
+    --cor-fundo-page: #f0f2f5; /* Cinza claro para fundo geral */
+    --cor-fundo-box: #FFFFFF; /* Branco para as caixas de form */
+    --cor-texto: #333333;
+    --cor-texto-label: #555555;
+    --cor-borda: #d9d9d9;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --cor-link: #3498DB; /* Azul para links */
+    --cor-profissional: #2980B9; /* Azul mais escuro para profissional */
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo-page);
+    color: var(--cor-texto);
+  }
+  
+  .area-externa {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center; /* Centraliza horizontalmente */
+      padding: 1rem;
+  }
+  
+  .cabecalho-login {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .cabecalho-login h1 a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  /* Container Principal da Tela de Login (Duas Colunas) */
+  .container-login {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    justify-content: center; /* Centraliza as colunas */
+    gap: 2rem; /* Espaço entre as colunas */
+    width: 100%;
+    max-width: 900px; /* Largura máxima para as duas colunas */
+    flex-grow: 1;
+  }
+  
+  .coluna-login {
+    flex: 1; /* Faz as colunas tentarem ocupar espaço igual */
+    min-width: 320px; /* Largura mínima antes de quebrar */
+  }
+  
+  /* Container Principal da Tela de Cadastro (Uma Coluna) */
+  .container-cadastro {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 550px; /* Largura da caixa de cadastro */
+      flex-grow: 1;
+  }
+  
+  
+  /* Caixa do Formulário */
+  .box-form {
+    background-color: var(--cor-fundo-box);
+    padding: 2rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--cor-sombra);
+    border: 1px solid var(--cor-borda);
+  }
+  
+  .box-form h2 {
+    text-align: center;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .box-profissional h2 {
+      color: var(--cor-profissional); /* Cor diferente para profissional */
+  }
+  
+  .box-form h2 .icone {
+      font-size: 1.5rem; /* Tamanho do emoji */
+  }
+  
+  .box-form p {
+    text-align: center;
+    color: var(--cor-texto-label);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Grupo de Formulário (Label + Input) */
+  .form-grupo {
+    margin-bottom: 1.2rem;
+  }
+  
+  .form-grupo label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--cor-texto-label);
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .form-grupo input[type="text"],
+  .form-grupo input[type="email"],
+  .form-grupo input[type="password"],
+  .form-grupo input[type="date"],
+  .form-grupo input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-grupo input:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2); /* Sombra suave no focus */
+  }
+  
+  .form-grupo small {
+      display: block;
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 4px;
+  }
+  
+  /* Opções do formulário (Lembrar-me, Esqueci senha) */
+  .form-opcoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .checkbox-lembrar input {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  .checkbox-lembrar {
+      color: var(--cor-texto-label);
+  }
+  
+  .link-esqueci-senha {
+    color: var(--cor-link);
+    text-decoration: none;
+  }
+  .link-esqueci-senha:hover {
+    text-decoration: underline;
+  }
+  
+  /* Botões */
+  .botao {
+    display: block; /* Ocupa toda a largura */
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    text-decoration: none; /* Para o caso do link de cadastro */
+  }
+  
+  .botao-entrar {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+  }
+  .botao-entrar:hover {
+    background-color: #c0392b; /* Vermelho mais escuro */
+    transform: translateY(-2px);
+  }
+  
+  .botao-profissional {
+      background-color: var(--cor-profissional);
+  }
+  .botao-profissional:hover {
+      background-color: #2471A3; /* Azul mais escuro */
+  }
+  
+  /* Link/Botão de Cadastro na tela de Login */
+  .link-cadastro {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--cor-borda);
+  }
+  .link-cadastro p {
+      margin-bottom: 0.8rem;
+      color: var(--cor-texto-label);
+  }
+  
+  .botao-cadastrar {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    border: 1px solid var(--cor-primaria);
+  }
+  .botao-cadastrar:hover {
+    background-color: #fff0f0; /* Fundo levemente rosado */
+     transform: translateY(-2px);
+  }
+  
+  .aviso-profissional {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 1rem;
+  }
+  
+  /* Estilos Específicos do Cadastro */
+  .box-cadastro {
+      padding: 2rem 3rem; /* Mais padding vertical */
+  }
+  
+  .tipo-usuario {
+      border: 1px solid var(--cor-borda);
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.2rem;
+  }
+  .tipo-usuario legend {
+      font-weight: bold;
+      color: var(--cor-texto-label);
+      padding: 0 0.5rem; /* Espaço ao redor da legenda */
+      font-size: 0.9rem;
+  }
+  .tipo-usuario label {
+      display: inline-block; /* Lado a lado */
+      margin-right: 1.5rem;
+      font-weight: normal;
+  }
+  .tipo-usuario input[type="radio"] {
+      margin-right: 5px;
+  }
+  
+  .termos {
+      font-size: 0.9rem;
+  }
+  .termos label {
+      font-weight: normal;
+      color: var(--cor-texto-label);
+  }
+  .termos input[type="checkbox"] {
+      margin-right: 5px;
+      vertical-align: middle;
+  }
+  .termos a {
+      color: var(--cor-link);
+  }
+  
+  .botao-cadastrar-submit {
+      margin-top: 1rem;
+  }
+  
+  .link-login-existente {
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--cor-borda);
+  }
+  .link-login-existente p {
+      margin-bottom: 0.5rem;
+  }
+  .link-login-existente a {
+      color: var(--cor-link);
+      font-weight: bold;
+      text-decoration: none;
+  }
+  .link-login-existente a:hover {
+      text-decoration: underline;
+  }
+  
+  
+  /* Rodapé */
+  .rodape-login {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    color: #777;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .container-login {
+      flex-direction: column; /* Empilha as colunas */
+      gap: 1.5rem;
+      max-width: 450px; /* Ajusta largura máxima para uma coluna */
+    }
+     .container-cadastro {
+         max-width: 450px;
+     }
+      .box-form {
+          padding: 1.5rem 2rem;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .cabecalho-login h1 a {
+          font-size: 2rem;
+      }
+      .box-form {
+          padding: 1.5rem 1.5rem;
+      }
+      .form-opcoes {
+          flex-direction: column; /* Empilha opções em telas pequenas */
+          align-items: flex-start;
+          gap: 0.5rem;
+      }
+  }

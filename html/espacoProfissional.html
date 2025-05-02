@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço do Profissional - Doe Vida</title>
+    <link rel="stylesheet" href="espacoProfissional.css">
+    </head>
+<body>
+    <header class="cabecalho-profissional">
+        <div class="container">
+            <h1><a href="#">Doe Vida</a></h1> <span class="titulo-area">Portal do Hemocentro</span>
+            </div>
+    </header>
+
+    <main class="container conteudo-principal">
+        <h2>Bem-vindo(a), Profissional!</h2>
+        <p class="introducao">Esta área é dedicada à gestão das operações do hemocentro. Utilize os módulos abaixo para acessar as funcionalidades.</p>
+
+        <div class="dashboard-modulos">
+            
+            <div class="modulo card">
+                 <span class="icone-placeholder">📅</span> <h3>Gerenciamento de Agendamentos</h3>
+                <p>Visualize, confirme ou cancele os agendamentos de doação.</p>
+                <a href="#link-para-agendamentos" class="botao botao-modulo">Acessar Agendamentos</a>
+                 </div>
+
+            <div class="modulo card">
+                 <span class="icone-placeholder">👥</span> <h3>Gestão de Doadores</h3>
+                <p>Consulte o histórico e informações de contato dos doadores cadastrados.</p>
+                 <p class="aviso-privacidade"><small>Acesso restrito e em conformidade com a LGPD.</small></p>
+                <a href="#link-para-doadores" class="botao botao-modulo">Consultar Doadores</a>
+                 </div>
+
+            <div class="modulo card">
+                 <span class="icone-placeholder">🩸</span> <h3>Controle de Estoque</h3>
+                <p>Verifique os níveis atuais de bolsas de sangue por tipo sanguíneo.</p>
+                <a href="#link-para-estoque" class="botao botao-modulo">Verificar Estoque</a>
+                 </div>
+
+            <div class="modulo card">
+                <span class="icone-placeholder">📢</span> <h3>Comunicação e Alertas</h3>
+                <p>Envie notificações importantes ou crie alertas de estoque baixo.</p>
+                <a href="#link-para-comunicacao" class="botao botao-modulo">Criar Alerta</a>
+                </div>
+
+             <div class="modulo card">
+                 <span class="icone-placeholder">📊</span> <h3>Relatórios e Estatísticas</h3>
+                <p>Gere relatórios sobre doações, captação e perfil dos doadores.</p>
+                <a href="#link-para-relatorios" class="botao botao-modulo">Gerar Relatórios</a>
+                 </div>
+
+            <div class="modulo card">
+                <span class="icone-placeholder">📜</span> <h3>Recursos e Protocolos</h3>
+                <p>Acesse rapidamente os protocolos de triagem, coleta e normas vigentes.</p>
+                 <a href="funcionario.html" class="botao botao-modulo">Ver Recursos</a>
+            </div>
+
+        </div> </main>
+
+    <footer class="rodape-profissional">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Doe Vida - Sistema de Gestão de Hemocentros. Todos os direitos reservados.</p>
+            <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+        </div>
+    </footer>
+
+</body>
+</html>
