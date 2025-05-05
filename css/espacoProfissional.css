@@ -1,18 +1,16 @@
-/* espacoProfissional.css */
 
-/* Variáveis de Cor (consistentes com o restante do projeto) */
 :root {
-    --cor-primaria: #E74C3C; /* Vermelho */
-    --cor-secundaria: #FFFFFF; /* Branco */
-    --cor-fundo: #f0f2f5; /* Um cinza um pouco diferente para o fundo do portal */
-    --cor-texto: #333333; /* Cinza escuro */
+    --cor-primaria: #E74C3C; 
+    --cor-secundaria: #FFFFFF; 
+    --cor-fundo: #f0f2f5; 
+    --cor-texto: #333333; 
     --cor-texto-claro: #FFFFFF;
     --cor-borda: #d9d9d9;
-    --cor-azul-info: #3498DB; /* Azul para alguns destaques */
+    --cor-azul-info: #3498DB; 
     --cor-sombra: rgba(0, 0, 0, 0.1);
   }
   
-  /* Reset Básico e Configurações Globais */
+  
   * {
     box-sizing: border-box;
     margin: 0;
@@ -31,12 +29,12 @@
   
   .container {
     width: 90%;
-    max-width: 1200px; /* Um pouco maior para dashboard */
+    max-width: 1200px; 
     margin-left: auto;
     margin-right: auto;
   }
   
-  /* Cabeçalho Específico do Portal */
+  
   .cabecalho-profissional {
     background-color: var(--cor-primaria);
     color: var(--cor-texto-claro);
@@ -62,7 +60,7 @@
       font-weight: normal;
   }
   
-  /* Botão Logout (Exemplo) */
+  
   .botao-logout {
       background-color: var(--cor-secundaria);
       color: var(--cor-primaria);
@@ -76,10 +74,10 @@
       background-color: #f1f1f1;
   }
   
-  /* Conteúdo Principal */
+  
   .conteudo-principal {
     padding: 2rem 1rem;
-    flex-grow: 1; /* Ocupa o espaço restante */
+    flex-grow: 1; 
   }
   
   .conteudo-principal h2 {
@@ -94,11 +92,11 @@
     color: #555;
   }
   
-  /* Grid de Módulos (Dashboard) */
+  
   .dashboard-modulos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Layout responsivo */
-    gap: 1.5rem; /* Espaçamento entre os cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /
+    gap: 1.5rem; 
   }
   
   .modulo.card {
@@ -109,7 +107,7 @@
     box-shadow: 0 2px 8px var(--cor-sombra);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column; /* Organiza conteúdo interno verticalmente */
+    flex-direction: column; 
   }
   
   .modulo.card:hover {
@@ -118,49 +116,39 @@
   }
   
   .modulo h3 {
-    color: var(--cor-azul-info); /* Azul para títulos dos módulos */
+    color: var(--cor-azul-info); 
     margin-bottom: 0.8rem;
     font-size: 1.3rem;
   }
   
   .modulo p {
     margin-bottom: 1rem;
-    flex-grow: 1; /* Faz o parágrafo ocupar espaço, empurrando o botão para baixo */
+    flex-grow: 1; 
     font-size: 0.95rem;
     color: #444;
   }
   
   .aviso-privacidade {
-      font-size: 0.8rem !important; /* !important para garantir sobreposição */
+      font-size: 0.8rem !important; 
       color: #777;
       font-style: italic;
-      margin-top: -0.5rem; /* Aproxima do parágrafo anterior */
+      margin-top: -0.5rem; 
       margin-bottom: 1rem;
   }
   
   
-  /* Placeholder para Ícones */
   .icone-placeholder {
-      font-size: 2.5rem; /* Tamanho do emoji/ícone */
+      font-size: 2.5rem; 
       display: block;
       text-align: center;
       margin-bottom: 1rem;
-      color: var(--cor-primaria); /* Cor do ícone */
+      color: var(--cor-primaria); 
   }
-  /* Se usar Font Awesome, estilizar a tag <i> em vez de .icone-placeholder */
-  /*
-  .modulo i {
-      font-size: 2.5rem;
-      color: var(--cor-primaria);
-      margin-bottom: 1rem;
-      display: block;
-      text-align: center;
-  }
-  */
+ 
   
-  /* Botão dentro dos Módulos */
+  
   .botao.botao-modulo {
-    display: inline-block; /* Ou block se quiser largura total */
+    display: inline-block;
     padding: 10px 20px;
     background-color: var(--cor-primaria);
     color: var(--cor-texto-claro);
@@ -171,26 +159,25 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: auto; /* Empurra o botão para o final do card */
+    margin-top: auto; 
   }
   
   .botao.botao-modulo:hover {
-    background-color: #c0392b; /* Vermelho mais escuro */
+    background-color: #c0392b; 
   }
   
   
-  /* Rodapé Específico do Portal */
+  
   .rodape-profissional {
-    background-color: #e9ecef; /* Cinza claro diferente */
+    background-color: #e9ecef;
     color: #555;
     text-align: center;
     padding: 1rem 0;
-    margin-top: auto; /* Empurra para o final */
+    margin-top: auto; 
     border-top: 1px solid var(--cor-borda);
     font-size: 0.9rem;
   }
   
-  /* Media Queries para Responsividade */
   @media (max-width: 768px) {
       .cabecalho-profissional .container {
           flex-direction: column;

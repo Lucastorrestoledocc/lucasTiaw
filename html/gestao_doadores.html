@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Doadores - Doe Vida</title>
+    <link rel="stylesheet" href="../css/gestao_doadores.css">
+    </head>
+<body>
+    <header class="cabecalho-gestao">
+        <div class="container">
+            <h1><a href="espacoProfissional.html">Portal do Hemocentro</a></h1>
+            <span class="titulo-pagina">Gestão de Doadores</span>
+        </div>
+    </header>
+
+    <main class="container conteudo-principal">
+        <h2>Lista de Doadores Cadastrados</h2>
+        <p>Consulte, filtre e visualize as informações dos doadores.</p>
+
+        <div class="filtros-busca">
+            <div class="filtro-item">
+                <label for="busca-nome">Buscar por Nome:</label>
+                <input type="text" id="busca-nome" placeholder="Digite o nome...">
+            </div>
+            <div class="filtro-item">
+                <label for="filtro-tipo-sanguineo">Filtrar por Tipo Sanguíneo:</label>
+                <select id="filtro-tipo-sanguineo">
+                    <option value="">Todos</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabela-container">
+            <table class="tabela-doadores">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Completo</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Tipo Sanguíneo</th>
+                        <th>Última Doação</th>
+                        <th>Cidade</th>
+                        <th>Ações</th> </tr>
+                </thead>
+                <tbody id="corpo-tabela-doadores">
+                    <tr>
+                        <td colspan="8" style="text-align: center;">Carregando doadores...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <footer class="rodape-gestao">
+        <div class="container">
+            <p>&copy; <span id="currentYearGestao"></span> Doe Vida - Sistema de Gestão. </p>
+        </div>
+    </footer>
+
+    <script src="../js/gestao_doadores.js"></script>
+    <script>document.getElementById('currentYearGestao').textContent = new Date().getFullYear();</script>
+
+    <div id="viewModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn" onclick="fecharModal('viewModal')">&times;</span>
+            <h2>Detalhes do Doador</h2>
+            <div id="viewModalBody" class="modal-body">
+                <p><strong>ID:</strong> <span id="view-id"></span></p>
+                <p><strong>Nome:</strong> <span id="view-nome"></span></p>
+                <p><strong>Email:</strong> <span id="view-email"></span></p>
+                <p><strong>Telefone:</strong> <span id="view-telefone"></span></p>
+                <p><strong>Tipo Sanguíneo:</strong> <span id="view-tipo-sanguineo"></span></p>
+                <p><strong>Última Doação:</strong> <span id="view-ultima-doacao"></span></p>
+                <p><strong>Cidade:</strong> <span id="view-cidade"></span></p>
+            </div>
+            <button class="botao botao-fechar" onclick="fecharModal('viewModal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn" onclick="fecharModal('editModal')">&times;</span>
+            <h2>Editar Doador</h2>
+            <form id="editForm" class="modal-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-grupo-modal">
+                    <label for="edit-nome">Nome Completo:</label>
+                    <input type="text" id="edit-nome" required>
+                </div>
+                 <div class="form-grupo-modal">
+                    <label for="edit-email">Email:</label>
+                    <input type="email" id="edit-email" required>
+                </div>
+                 <div class="form-grupo-modal">
+                    <label for="edit-telefone">Telefone:</label>
+                    <input type="tel" id="edit-telefone" required>
+                </div>
+                 <div class="form-grupo-modal">
+                    <label for="edit-tipo-sanguineo">Tipo Sanguíneo:</label>
+                    <select id="edit-tipo-sanguineo" required>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                 <div class="form-grupo-modal">
+                    <label for="edit-ultima-doacao">Última Doação (AAAA-MM-DD):</label>
+                    <input type="date" id="edit-ultima-doacao" required>
+                     <small>Formato: Ano-Mês-Dia</small>
+                </div>
+                 <div class="form-grupo-modal">
+                    <label for="edit-cidade">Cidade:</label>
+                    <input type="text" id="edit-cidade" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="botao botao-salvar">Salvar Alterações (Simulado)</button>
+                    <button type="button" class="botao botao-cancelar" onclick="fecharModal('editModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="../js/gestao_doadores.js"></script>
+    <script>document.getElementById('currentYearGestao').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,16 +1,16 @@
-/* login_cadastro.css */
+
 
 :root {
-    --cor-primaria: #E74C3C; /* Vermelho */
-    --cor-secundaria: #FFFFFF; /* Branco */
-    --cor-fundo-page: #f0f2f5; /* Cinza claro para fundo geral */
-    --cor-fundo-box: #FFFFFF; /* Branco para as caixas de form */
+    --cor-primaria: #E74C3C; 
+    --cor-secundaria: #FFFFFF; 
+    --cor-fundo-page: #f0f2f5; 
+    --cor-fundo-box: #FFFFFF; 
     --cor-texto: #333333;
     --cor-texto-label: #555555;
     --cor-borda: #d9d9d9;
     --cor-sombra: rgba(0, 0, 0, 0.1);
-    --cor-link: #3498DB; /* Azul para links */
-    --cor-profissional: #2980B9; /* Azul mais escuro para profissional */
+    --cor-link: #3498DB; 
+    --cor-profissional: #2980B9; 
   }
   
   * {
@@ -30,7 +30,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      align-items: center; /* Centraliza horizontalmente */
+      align-items: center; 
       padding: 1rem;
   }
   
@@ -47,33 +47,33 @@
     font-weight: bold;
   }
   
-  /* Container Principal da Tela de Login (Duas Colunas) */
+  
   .container-login {
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
-    justify-content: center; /* Centraliza as colunas */
-    gap: 2rem; /* Espaço entre as colunas */
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 2rem; 
     width: 100%;
-    max-width: 900px; /* Largura máxima para as duas colunas */
+    max-width: 900px; 
     flex-grow: 1;
   }
   
   .coluna-login {
-    flex: 1; /* Faz as colunas tentarem ocupar espaço igual */
-    min-width: 320px; /* Largura mínima antes de quebrar */
+    flex: 1; 
+    min-width: 320px; 
   }
   
-  /* Container Principal da Tela de Cadastro (Uma Coluna) */
+  
   .container-cadastro {
       display: flex;
       justify-content: center;
       width: 100%;
-      max-width: 550px; /* Largura da caixa de cadastro */
+      max-width: 550px; 
       flex-grow: 1;
   }
   
   
-  /* Caixa do Formulário */
+  
   .box-form {
     background-color: var(--cor-fundo-box);
     padding: 2rem 2.5rem;
@@ -93,11 +93,11 @@
     gap: 0.5rem;
   }
   .box-profissional h2 {
-      color: var(--cor-profissional); /* Cor diferente para profissional */
+      color: var(--cor-profissional); 
   }
   
   .box-form h2 .icone {
-      font-size: 1.5rem; /* Tamanho do emoji */
+      font-size: 1.5rem; 
   }
   
   .box-form p {
@@ -107,7 +107,7 @@
     font-size: 0.95rem;
   }
   
-  /* Grupo de Formulário (Label + Input) */
+  
   .form-grupo {
     margin-bottom: 1.2rem;
   }
@@ -136,7 +136,7 @@
   .form-grupo input:focus {
     border-color: var(--cor-primaria);
     outline: none;
-    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2); /* Sombra suave no focus */
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2); 
   }
   
   .form-grupo small {
@@ -146,7 +146,7 @@
       margin-top: 4px;
   }
   
-  /* Opções do formulário (Lembrar-me, Esqueci senha) */
+  
   .form-opcoes {
     display: flex;
     justify-content: space-between;
@@ -171,9 +171,9 @@
     text-decoration: underline;
   }
   
-  /* Botões */
+  
   .botao {
-    display: block; /* Ocupa toda a largura */
+    display: block; 
     width: 100%;
     padding: 14px 20px;
     border: none;
@@ -183,7 +183,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-align: center;
-    text-decoration: none; /* Para o caso do link de cadastro */
+    text-decoration: none; 
   }
   
   .botao-entrar {
@@ -191,7 +191,7 @@
     color: var(--cor-secundaria);
   }
   .botao-entrar:hover {
-    background-color: #c0392b; /* Vermelho mais escuro */
+    background-color: #c0392b; 
     transform: translateY(-2px);
   }
   
@@ -199,10 +199,10 @@
       background-color: var(--cor-profissional);
   }
   .botao-profissional:hover {
-      background-color: #2471A3; /* Azul mais escuro */
+      background-color: #2471A3; 
   }
   
-  /* Link/Botão de Cadastro na tela de Login */
+  
   .link-cadastro {
     text-align: center;
     margin-top: 1.5rem;
@@ -220,7 +220,7 @@
     border: 1px solid var(--cor-primaria);
   }
   .botao-cadastrar:hover {
-    background-color: #fff0f0; /* Fundo levemente rosado */
+    background-color: #fff0f0; 
      transform: translateY(-2px);
   }
   
@@ -230,9 +230,9 @@
       margin-top: 1rem;
   }
   
-  /* Estilos Específicos do Cadastro */
+  
   .box-cadastro {
-      padding: 2rem 3rem; /* Mais padding vertical */
+      padding: 2rem 3rem; 
   }
   
   .tipo-usuario {
@@ -244,11 +244,11 @@
   .tipo-usuario legend {
       font-weight: bold;
       color: var(--cor-texto-label);
-      padding: 0 0.5rem; /* Espaço ao redor da legenda */
+      padding: 0 0.5rem; 
       font-size: 0.9rem;
   }
   .tipo-usuario label {
-      display: inline-block; /* Lado a lado */
+      display: inline-block; 
       margin-right: 1.5rem;
       font-weight: normal;
   }
@@ -294,7 +294,7 @@
   }
   
   
-  /* Rodapé */
+  
   .rodape-login {
     text-align: center;
     margin-top: 2rem;
@@ -304,12 +304,12 @@
     width: 100%;
   }
   
-  /* Responsividade */
+  
   @media (max-width: 768px) {
     .container-login {
-      flex-direction: column; /* Empilha as colunas */
+      flex-direction: column; 
       gap: 1.5rem;
-      max-width: 450px; /* Ajusta largura máxima para uma coluna */
+      max-width: 450px; 
     }
      .container-cadastro {
          max-width: 450px;
@@ -327,7 +327,7 @@
           padding: 1.5rem 1.5rem;
       }
       .form-opcoes {
-          flex-direction: column; /* Empilha opções em telas pequenas */
+          flex-direction: column; 
           align-items: flex-start;
           gap: 0.5rem;
       }
