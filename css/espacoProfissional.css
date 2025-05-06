@@ -204,4 +204,44 @@
       .modulo h3 {
           font-size: 1.2rem;
       }
+
+      .kpi-container {
+        margin-top: 1rem;
+        margin-bottom: 1rem; /* Adiciona espaço antes do botão do card */
+        padding-top: 0.8rem;
+        border-top: 1px solid var(--cor-borda);
+    }
+    
+    .kpi-item {
+        font-size: 0.95rem;
+        color: #444; /* Um pouco mais escuro que o parágrafo normal do card */
+        margin-bottom: 0.5rem !important; /* Sobrescreve o margin-bottom do .modulo p */
+        display: flex; /* Para alinhar texto e número */
+        justify-content: space-between; /* Coloca o número na direita */
+    }
+    
+    .kpi-item strong {
+        font-size: 1.1rem;
+        color: var(--cor-primaria); /* Cor de destaque para o número */
+        font-weight: bold;
+    }
+    
+    /* Ajuste no card para melhor acomodar os KPIs e o botão */
+    .modulo.card {
+        display: flex;
+        flex-direction: column; /* Garante que o conteúdo interno flua verticalmente */
+    }
+    
+    .modulo.card p { /* Parágrafos descritivos do card */
+        flex-grow: 0; /* Não deixa o parágrafo crescer tanto se o kpi-container estiver presente */
+    }
+    
+    .modulo.card .kpi-container {
+        flex-grow: 1; /* Permite que o container de kpi ocupe espaço */
+    }
+    
+    .modulo.card .botao.botao-modulo {
+        margin-top: auto; /* Empurra o botão para o final do card, mesmo com KPIs */
+    }
+    
   }

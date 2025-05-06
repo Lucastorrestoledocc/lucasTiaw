@@ -1,10 +1,10 @@
-/* gerenciamento_agendamentos.css */
+
 
 :root {
     --cor-primaria: #E74C3C;
     --cor-secundaria: #FFFFFF;
     --cor-fundo-page: #f8f9fa;
-    --cor-fundo-header: #343a40; /* Mesmo do gestao_doadores para consistência */
+    --cor-fundo-header: #E74C3C; 
     --cor-texto: #333333;
     --cor-texto-claro: #FFFFFF;
     --cor-texto-secundario: #555;
@@ -13,7 +13,6 @@
     --cor-hover-linha: #f1f3f5;
     --cor-cabecalho-tabela: #e9ecef;
   
-    /* Cores de Status */
     --status-pendente-bg: #fff3cd;
     --status-pendente-text: #856404;
     --status-confirmado-bg: #d4edda;
@@ -23,10 +22,10 @@
     --status-realizado-bg: #d1ecf1;
     --status-realizado-text: #0c5460;
   
-    /* Cores dos Botões de Ação */
-    --botao-confirmar-bg: #28a745; /* Verde */
-    --botao-cancelar-bg: #dc3545; /* Vermelho */
-    --botao-realizado-bg: #007bff; /* Azul */
+    
+    --botao-confirmar-bg: #28a745; 
+    --botao-cancelar-bg: #dc3545; 
+    --botao-realizado-bg: #007bff; 
     --botao-texto: #ffffff;
   }
   
@@ -48,7 +47,7 @@
   
   .container {
     width: 95%;
-    max-width: 1500px; /* Pode precisar ser um pouco maior para mais colunas */
+    max-width: 1500px; 
     margin-left: auto;
     margin-right: auto;
   }
@@ -107,15 +106,15 @@
     border: 1px solid var(--cor-borda);
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 1.5rem; /* Espaço entre linhas e colunas */
+    gap: 1rem 1.5rem; 
     align-items: flex-end;
   }
   
   .filtro-item {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Permite que os itens cresçam */
-    min-width: 200px; /* Largura mínima para cada filtro */
+    flex-grow: 1; 
+    min-width: 200px; 
   }
   
   .filtro-item label {
@@ -132,7 +131,7 @@
     border: 1px solid var(--cor-borda);
     border-radius: 4px;
     font-size: 1rem;
-    width: 100%; /* Ocupa a largura do .filtro-item */
+    width: 100%; 
   }
   
   .filtro-item input[type="text"]:focus,
@@ -186,15 +185,15 @@
       color: var(--cor-texto-secundario);
   }
   
-  /* Estilos para Status */
+ 
   .status-agendamento {
       padding: 4px 8px;
-      border-radius: 15px; /* Mais arredondado para parecer uma tag/badge */
+      border-radius: 15px; 
       font-size: 0.8rem;
       font-weight: bold;
       text-align: center;
-      display: inline-block; /* Para que o padding e o text-align funcionem bem */
-      min-width: 90px; /* Largura mínima para consistência */
+      display: inline-block; 
+      min-width: 90px; 
   }
   
   .status-pendente {
@@ -219,10 +218,10 @@
   }
   
   
-  /* Botões de Ação na Tabela */
+  
   .tabela-agendamentos .botao-acao-ag {
       padding: 4px 8px;
-      margin: 2px; /* Espaçamento entre botões */
+      margin: 2px; 
       border: none;
       border-radius: 4px;
       cursor: pointer;
@@ -230,7 +229,7 @@
       text-decoration: none;
       color: var(--botao-texto);
       transition: opacity 0.2s ease;
-      min-width: 80px; /* Largura mínima para os botões */
+      min-width: 80px; 
       text-align: center;
   }
   
@@ -258,7 +257,7 @@
   
   @media (max-width: 992px) {
       .filtros-busca-agendamentos {
-          grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+          grid-template-columns: repeat(2, 1fr); 
       }
   }
   

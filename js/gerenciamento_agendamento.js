@@ -134,9 +134,47 @@ function atualizarStatusAgendamento(idAgendamento, novoStatus) {
       
         document.getElementById('busca-doador-ag').dispatchEvent(new Event('input')); 
 
+        alert(`Agendamento ${idAgendamento} atualizado para ${novoStatus} `);
+    } else {
+        alert(`Erro: Agendamento com ID ${idAgendamento} não encontrado.`);
+    }
+
+    function atualizarStatusAgendamento(idAgendamento, novoStatus) {
+        const index = todosOsAgendamentos.findIndex(ag => ag.id_agendamento === idAgendamento);
+        if (index > -1) {
+            todosOsAgendamentos[index].status = novoStatus;
+    
+            // Salva a lista atualizada no sessionStorage
+            try {
+                sessionStorage.setItem('agendamentosModificados', JSON.stringify(todosOsAgendamentos));
+                console.log('GERENCIAMENTO: Agendamentos salvos no sessionStorage:', JSON.parse(JSON.stringify(todosOsAgendamentos))); // Loga uma cópia para ver o estado exato
+            } catch (e) {
+                console.error("GERENCIAMENTO: Erro ao salvar agendamentos no sessionStorage:", e);
+            }
+    
+    
+            // Para forçar a re-renderização da tabela na página atual
+            const inputBuscaDoador = document.getElementById('busca-doador-ag');
+            if(inputBuscaDoador && typeof filtrarAgendamentos === 'function') {
+                
+                 filtrarAgendamentos(); // Chamada direta é mais confiável que disparar evento
+            } else {
+                 console.warn("Não foi possível refiltrar a tabela automaticamente.");
+
+                 const event = new Event('input', { bubbles: true, cancelable: true });
+             if(inputBuscaDoador) inputBuscaDoador.dispatchEvent(event);
+
+             if (document.getElementById('busca-doador-ag')) { // Certifica que o elemento existe
+                document.getElementById('busca-doador-ag').dispatchEvent(new Event('input'));
+            } else if (document.getElementById('filtro-data-ag')) {
+                document.getElementById('filtro-data-ag').dispatchEvent(new Event('change'));
+            }
+
+        }
         alert(`Agendamento ${idAgendamento} atualizado para ${novoStatus} (Simulação)!`);
     } else {
         alert(`Erro: Agendamento com ID ${idAgendamento} não encontrado.`);
     }
     
+}
 }
