@@ -1,0 +1,281 @@
+/* gerenciamento_agendamentos.css */
+
+:root {
+    --cor-primaria: #E74C3C;
+    --cor-secundaria: #FFFFFF;
+    --cor-fundo-page: #f8f9fa;
+    --cor-fundo-header: #343a40; /* Mesmo do gestao_doadores para consistência */
+    --cor-texto: #333333;
+    --cor-texto-claro: #FFFFFF;
+    --cor-texto-secundario: #555;
+    --cor-borda: #dee2e6;
+    --cor-sombra: rgba(0, 0, 0, 0.075);
+    --cor-hover-linha: #f1f3f5;
+    --cor-cabecalho-tabela: #e9ecef;
+  
+    /* Cores de Status */
+    --status-pendente-bg: #fff3cd;
+    --status-pendente-text: #856404;
+    --status-confirmado-bg: #d4edda;
+    --status-confirmado-text: #155724;
+    --status-cancelado-bg: #f8d7da;
+    --status-cancelado-text: #721c24;
+    --status-realizado-bg: #d1ecf1;
+    --status-realizado-text: #0c5460;
+  
+    /* Cores dos Botões de Ação */
+    --botao-confirmar-bg: #28a745; /* Verde */
+    --botao-cancelar-bg: #dc3545; /* Vermelho */
+    --botao-realizado-bg: #007bff; /* Azul */
+    --botao-texto: #ffffff;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo-page);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 95%;
+    max-width: 1500px; /* Pode precisar ser um pouco maior para mais colunas */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cabecalho-gestao {
+    background-color: var(--cor-fundo-header);
+    color: var(--cor-texto-claro);
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 4px var(--cor-sombra);
+    margin-bottom: 1.5rem;
+  }
+  
+  .cabecalho-gestao .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .cabecalho-gestao h1 a {
+      color: var(--cor-texto-claro);
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+  }
+  .cabecalho-gestao h1 a:hover {
+      opacity: 0.9;
+  }
+  
+  .cabecalho-gestao .titulo-pagina {
+      font-size: 1.1rem;
+      font-weight: normal;
+  }
+  
+  .conteudo-principal {
+    padding: 1rem;
+    flex-grow: 1;
+  }
+  
+  .conteudo-principal h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+    font-size: 1.7rem;
+  }
+  .conteudo-principal p {
+    margin-bottom: 1.5rem;
+    color: var(--cor-texto-secundario);
+  }
+  
+  .filtros-busca-agendamentos {
+    background-color: var(--cor-secundaria);
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--cor-borda);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem; /* Espaço entre linhas e colunas */
+    align-items: flex-end;
+  }
+  
+  .filtro-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que os itens cresçam */
+    min-width: 200px; /* Largura mínima para cada filtro */
+  }
+  
+  .filtro-item label {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .filtro-item input[type="text"],
+  .filtro-item input[type="date"],
+  .filtro-item select {
+    padding: 8px 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%; /* Ocupa a largura do .filtro-item */
+  }
+  
+  .filtro-item input[type="text"]:focus,
+  .filtro-item input[type="date"]:focus,
+  .filtro-item select:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+  }
+  
+  .tabela-container {
+    overflow-x: auto;
+    background-color: var(--cor-secundaria);
+    border-radius: 6px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 1px 3px var(--cor-sombra);
+  }
+  
+  .tabela-agendamentos {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabela-agendamentos th,
+  .tabela-agendamentos td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-borda);
+    white-space: nowrap;
+  }
+  
+  .tabela-agendamentos thead th {
+    background-color: var(--cor-cabecalho-tabela);
+    font-weight: 600;
+    color: #495057;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .tabela-agendamentos tbody tr:nth-child(even) {
+    background-color: var(--cor-fundo-page);
+  }
+  
+  .tabela-agendamentos tbody tr:hover {
+    background-color: var(--cor-hover-linha);
+  }
+  
+  .tabela-agendamentos td {
+      font-size: 0.9rem;
+      color: var(--cor-texto-secundario);
+  }
+  
+  /* Estilos para Status */
+  .status-agendamento {
+      padding: 4px 8px;
+      border-radius: 15px; /* Mais arredondado para parecer uma tag/badge */
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-align: center;
+      display: inline-block; /* Para que o padding e o text-align funcionem bem */
+      min-width: 90px; /* Largura mínima para consistência */
+  }
+  
+  .status-pendente {
+      background-color: var(--status-pendente-bg);
+      color: var(--status-pendente-text);
+      border: 1px solid var(--status-pendente-text);
+  }
+  .status-confirmado {
+      background-color: var(--status-confirmado-bg);
+      color: var(--status-confirmado-text);
+      border: 1px solid var(--status-confirmado-text);
+  }
+  .status-cancelado {
+      background-color: var(--status-cancelado-bg);
+      color: var(--status-cancelado-text);
+      border: 1px solid var(--status-cancelado-text);
+  }
+  .status-realizado {
+      background-color: var(--status-realizado-bg);
+      color: var(--status-realizado-text);
+      border: 1px solid var(--status-realizado-text);
+  }
+  
+  
+  /* Botões de Ação na Tabela */
+  .tabela-agendamentos .botao-acao-ag {
+      padding: 4px 8px;
+      margin: 2px; /* Espaçamento entre botões */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: var(--botao-texto);
+      transition: opacity 0.2s ease;
+      min-width: 80px; /* Largura mínima para os botões */
+      text-align: center;
+  }
+  
+  .botao-confirmar { background-color: var(--botao-confirmar-bg); }
+  .botao-cancelar-ag { background-color: var(--botao-cancelar-bg); }
+  .botao-realizado { background-color: var(--botao-realizado-bg); }
+  
+  .tabela-agendamentos .botao-acao-ag:hover {
+      opacity: 0.85;
+  }
+  .tabela-agendamentos .botao-acao-ag:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+  }
+  
+  .rodape-gestao {
+    background-color: var(--cor-cabecalho-tabela);
+    color: var(--cor-texto-secundario);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 992px) {
+      .filtros-busca-agendamentos {
+          grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .filtros-busca-agendamentos {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 1rem;
+      }
+      .filtro-item input[type="text"],
+      .filtro-item input[type="date"],
+      .filtro-item select {
+          min-width: unset;
+          width: 100%;
+      }
+       .cabecalho-gestao .container {
+          flex-direction: column;
+          text-align: center;
+      }
+  }

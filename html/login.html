@@ -5,36 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Doe Vida</title>
     <link rel="stylesheet" href="../css/login_cadastro.css">
-     </head>
+</head>
 <body>
     <div class="area-externa">
         <header class="cabecalho-login">
-            <h1><a href="index.html">Doe Vida</a></h1> </header>
+            <h1><a href="index.html">Doe Vida</a></h1>
+        </header>
 
         <main class="container-login">
             <div class="coluna-login">
                 <div class="box-form">
                     <h2><span class="icone">🩸</span> Acesso Doador / Paciente</h2>
-                    <p>Faça login para agendar doações, ver seu histórico ou acessar informações.</p>
-                    <form action="#backend-login-cliente" method="POST"> <div class="form-grupo">
-                            <label for="email_cliente">Email:</label>
-                            <input type="email" id="email_cliente" name="email" required>
-                        </div>
-                        <div class="form-grupo">
-                            <label for="senha_cliente">Senha:</label>
-                            <input type="password" id="senha_cliente" name="senha" required>
-                        </div>
-                        <div class="form-opcoes">
-                            <label class="checkbox-lembrar">
-                                <input type="checkbox" name="lembrar"> Lembrar-me
-                            </label>
-                            <a href="#link-esqueci-senha-cliente" class="link-esqueci-senha">Esqueci minha senha</a>
-                        </div>
-                        <button type="submit" class="botao botao-entrar">Entrar</button>
-                    </form>
                     <div class="link-cadastro">
                         <p>Ainda não tem conta?</p>
-                        <a href="cadastro_cliente.html" class="botao botao-cadastrar">Cadastre-se aqui</a>
+                         <a href="cadastro_cliente.html" class="botao botao-cadastrar">Cadastre-se aqui</a>
                     </div>
                 </div>
             </div>
@@ -43,29 +27,33 @@
                  <div class="box-form box-profissional">
                     <h2><span class="icone">🧑‍⚕️</span> Acesso Profissional</h2>
                     <p>Área restrita para funcionários do hemocentro.</p>
-                    <form action="#backend-login-profissional" method="POST"> <div class="form-grupo">
-                            <label for="email_profissional">Email ou ID Funcional:</label>
-                            <input type="text" id="email_profissional" name="identificador" required>
+                    <form id="form-login-profissional">
+                        <div class="form-grupo">
+                            <label for="identificador_profissional">Email ou ID Funcional:</label>
+                            <input type="text" id="identificador_profissional" name="identificador" required>
                         </div>
                         <div class="form-grupo">
                             <label for="senha_profissional">Senha:</label>
-                            <input type="password" id="senha_profissional" name="senha" required>
+                             <input type="password" id="senha_profissional" name="senha" required>
                         </div>
                          <div class="form-opcoes">
-                             <span style="visibility: hidden;">.</span> </div>
+                            <span style="visibility: hidden;">.</span>
+                         </div>
+                         <p id="error-message-profissional" class="error-message" style="display: none;"></p>
                         <button type="submit" class="botao botao-entrar botao-profissional">Entrar (Profissional)</button>
                     </form>
                      <div class="link-cadastro">
-                        <p class="aviso-profissional">Este acesso é restrito. Novas contas profissionais são criadas internamente pelo administrador do sistema.</p>
+                        <p class="aviso-profissional">Este acesso é restrito...</p>
                      </div>
                  </div>
             </div>
         </main>
 
         <footer class="rodape-login">
-            <p>&copy; <span id="currentYearLogin"></span> Doe Vida. Todos os direitos reservados.</p>
+             <p>&copy; <span id="currentYearLogin"></span> Doe Vida...</p>
         </footer>
     </div>
-    <script>document.getElementById('currentYearLogin').textContent = new Date().getFullYear();</script>
+
+    <script src="../js/login_controller.js"></script> <script>document.getElementById('currentYearLogin').textContent = new Date().getFullYear();</script>
 </body>
 </html>

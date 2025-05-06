@@ -332,3 +332,20 @@
           gap: 0.5rem;
       }
   }
+
+  .error-message {
+    color: #E74C3C; 
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -0.5rem; 
+    margin-bottom: 1rem;
+    min-height: 1.2em; 
+}
+
+.error-message[style*="display: none"] {
+    display: none;
+}
+.error-message[style*="display: block"] {
+    display: block;
+}

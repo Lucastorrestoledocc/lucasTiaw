@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Agendamentos - Doe Vida</title>
+    <link rel="stylesheet" href="../css/gerenciamento_agendamento.css">
+    </head>
+<body>
+    <header class="cabecalho-gestao">
+        <div class="container">
+            <h1><a href="espacoProfissional.html">Portal do Hemocentro</a></h1>
+            <span class="titulo-pagina">Gerenciamento de Agendamentos</span>
+        </div>
+    </header>
+
+    <main class="container conteudo-principal">
+        <h2>Controle de Agendamentos</h2>
+        <p>Visualize e gerencie os agendamentos de doação de sangue.</p>
+
+        <div class="filtros-busca-agendamentos">
+            <div class="filtro-item">
+                <label for="busca-doador-ag">Buscar por Doador:</label>
+                <input type="text" id="busca-doador-ag" placeholder="Nome ou ID do doador...">
+            </div>
+            <div class="filtro-item">
+                <label for="filtro-data-ag">Filtrar por Data:</label>
+                <input type="date" id="filtro-data-ag">
+            </div>
+            <div class="filtro-item">
+                <label for="filtro-status-ag">Filtrar por Status:</label>
+                <select id="filtro-status-ag">
+                    <option value="">Todos</option>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Confirmado">Confirmado</option>
+                    <option value="Cancelado">Cancelado</option>
+                    <option value="Realizado">Realizado</option>
+                </select>
+            </div>
+             <div class="filtro-item">
+                <label for="filtro-hemocentro-ag">Filtrar por Hemocentro:</label>
+                <select id="filtro-hemocentro-ag">
+                    <option value="">Todos</option>
+                    <option value="Hemocentro Central BH">Hemocentro Central BH</option>
+                    <option value="Posto de Coleta Savassi">Posto de Coleta Savassi</option>
+                    </select>
+            </div>
+        </div>
+
+        <div class="tabela-container">
+            <table class="tabela-agendamentos">
+                <thead>
+                    <tr>
+                        <th>ID Agend.</th>
+                        <th>Nome do Doador</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Hemocentro</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela-agendamentos">
+                    <tr>
+                        <td colspan="7" style="text-align: center;">Carregando agendamentos...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="rodape-gestao">
+        <div class="container">
+            <p>&copy; <span id="currentYearAgendamentos"></span> Doe Vida - Sistema de Gestão.</p>
+        </div>
+    </footer>
+
+    <script src="../js/gerenciamento_agendamento.js"></script>
+    <script>document.getElementById('currentYearAgendamentos').textContent = new Date().getFullYear();</script>
+</body>
+</html>
